@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Love Letter ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #7b0f1a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+      color: #5b0a0a;
+    }
+
+    /* Click button */
+    .open-btn {
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid #ffd6d6;
+      color: white;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Letter */
+    .letter {
+      display: none;
+      width: 70%;
+      max-height: 60vh;
+      background: #fff5dc;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.3);
+      overflow-y: auto;
+      animation: openLetter 2.5s ease forwards;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 22px;
+      line-height: 1.6;
+transform-origin: top;
+  transform: scaleY(0);
+  animation: scrollOpen 3s ease forwards;
+    }
+@keyframes scrollOpen {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+
+    @keyframes openLetter {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Nav buttons */
+    .nav-buttons {
+      position: absolute;
+      bottom: 25px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .nav-buttons a {
+      background: rgba(255,255,255,0.15);
+      border: 2px solid #ffd6d6;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+
+<body>
+<div class="hearts">
+  <span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span>
+  <span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span>
+</div>
+
+
+
+<button class="open-btn" onclick="openLetter()">💌 Click to Read</button>
+
+<div class="letter" id="letter">
+  My Pingu,  
+  <br><br>
+  It’s been seven years… seven whole years of us, and I still can’t quite believe it. And now, we’re getting married, everything feels so surreal. Thank you, truly, for always being by my side. I know I’m not the easiest person to be with, but you handle me with so much patience and care, every single time.
+
+Thank you for never leaving, even when things got hard. I really did luck out in life by having you, and I’m endlessly grateful to God for giving me someone like you. You’re the most hardworking person I know, and I know with all my heart that everything will fall into place for you very soon.
+
+And you know this I’ll always be there for you, no matter what. Happy anniversary, my love. 
+I love you so, so much, and I can’t wait to do life with you 
+  <br><br>
+  Forever yours ❤️
+</div>
+
+<div class="nav-buttons">
+  <a href="memories.html">⬅ Back</a>
+  <a href="certificate.html">Next ➜</a>
+</div>
+
+<script>
+function openLetter() {
+  document.querySelector(".open-btn").style.display = "none";
+  document.getElementById("letter").style.display = "block";
+}
+</script>
+<style>
+#hearts span {
+  position: fixed;
+  bottom: -50px;
+  color: rgba(255, 105, 180, 0.9);
+  animation: floatUp linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+</style>
+
+<style>
+#hearts span {
+  position: fixed;
+  bottom: -50px;
+  color: rgba(255, 105, 180, 0.9);
+  animation: floatUp linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+<style>
+#hearts span {
+  position: fixed;
+  bottom: -50px;
+  color: rgba(255, 105, 180, 0.9);
+  animation: floatUp linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+</style>
+
+<script>
+const heartsContainer = document.getElementById("hearts");
+
+for (let i = 0; i < 80; i++) {
+  const heart = document.createElement("span");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (14 + Math.random() * 30) + "px";
+  heart.style.animationDuration = (4 + Math.random() * 6) + "s";
+  heart.style.animationDelay = Math.random() * 5 + "s";
+  heartsContainer.appendChild(heart);
+}
+</script>
+
+
+
+	
+</body>
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countdown to Forever 💍</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div class="hearts">
+    <span style="left: 10%; animation-delay: 0s;">❤️</span>
+    <span style="left: 25%; animation-delay: 2s;">💖</span>
+    <span style="left: 40%; animation-delay: 4s;">❤️</span>
+    <span style="left: 55%; animation-delay: 1s;">💗</span>
+    <span style="left: 70%; animation-delay: 3s;">❤️</span>
+    <span style="left: 85%; animation-delay: 5s;">💞</span>
+    <span style="left: 50%; animation-delay: 6s;">❤️</span>
+</div>
+
+<body class="countdown-page">
+
+
+    <div class="page-container">
+        <h1 class="title">Our Forever Begins In </h1>
+
+        <p class="subtitle">30 • 08 • 2026</p>
+
+        <div class="countdown-box">
+            <div>
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
+            <div>
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
+            <div>
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
+            <div>
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+
+        <p class="ending-line">
+            Counting every heartbeat until I become yours forever 👩‍❤️‍👨❤️
+        </p>
+
+        <div class="nav-buttons">
+         <a href="gallery.html" class="cute-btn">⬅ Back</a>
+
+        </div>
+    </div>
+
+<script>
+    const weddingDate = new Date("August 30, 2026 00:00:00").getTime();
+
+    setInterval(() => {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+    }, 1000);
+window.onload = () => {
+    const burst = document.getElementById("heartBurst");
+
+    for (let i = 0; i < 18; i++) {
+        const heart = document.createElement("span");
+        heart.innerHTML = "❤️";
+        heart.style.position = "absolute";
+        heart.style.fontSize = "18px";
+       heart.style.setProperty('--x', `${Math.random() * 200 - 100}px`);
+heart.style.setProperty('--y', `${Math.random() * 200 - 100}px`);
+heart.style.animation = `burst 1.8s ease-out forwards`;
+
+        heart.style.transform = `rotate(${Math.random() * 360}deg)`;
+        burst.appendChild(heart);
+    }
+
+    setTimeout(() => {
+        burst.innerHTML = "";
+    }, 2000);
+};
+
+</script>
+
+</body>
+</html>

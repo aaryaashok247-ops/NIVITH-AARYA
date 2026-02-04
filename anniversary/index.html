@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Happy Anniversary ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="index-page">
+
+  <!-- Floating Hearts -->
+  <div id="hearts"></div>
+
+ <div class="index-content">
+
+  <h1 class="fade-in">HAPPY ANNIVERSARY LOVE</h1>
+
+  <h2 class="fade-in delay-1">
+    Our last anniversary before forever ❤️💍
+  </h2>
+
+  <a href="destiny.html" class="button fade-in delay-2">
+    Next
+  </a>
+
+</div>
+
+
+  <script>
+    const heartsContainer = document.getElementById("hearts");
+
+    for (let i = 0; i < 60; i++) {
+      const heart = document.createElement("span");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (14 + Math.random() * 26) + "px";
+      heart.style.animationDuration = (4 + Math.random() * 6) + "s";
+      heart.style.animationDelay = Math.random() * 5 + "s";
+      heartsContainer.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
